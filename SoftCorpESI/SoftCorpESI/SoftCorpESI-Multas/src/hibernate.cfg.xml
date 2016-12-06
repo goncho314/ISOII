@@ -13,12 +13,12 @@
         <property name="connection.password">root</property>  
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>  
 
-    	<mapping class="edu.uclm.esi.iso2.multas.domain.Inquiry"/>
-    	<mapping class="edu.uclm.esi.iso2.multas.domain.Owner"/>
-    	<mapping class="edu.uclm.esi.iso2.multas.domain.Vehicle"/>  
-    	<mapping class="edu.uclm.esi.iso2.multas.domain.Sanction"/> 
-    	<mapping class="edu.uclm.esi.iso2.multas.domain.Driver"/>  
-    	<mapping class="edu.uclm.esi.iso2.multas.domain.SanctionHolder"/>  
+    	<mapping class="Domain.Inquiry"/>
+    	<mapping class="Domain.Owner"/>
+    	<mapping class="Domain.Vehicle"/>  
+    	<mapping class="Domain.Sanction"/> 
+    	<mapping class="Domain.Driver"/>  
+    	<mapping class="Domain.SanctionHolder"/>  
     </session-factory>  
   
 </hibernate-configuration>  

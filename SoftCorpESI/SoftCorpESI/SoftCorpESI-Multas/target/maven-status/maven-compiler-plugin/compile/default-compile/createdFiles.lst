@@ -1,0 +1,14 @@
+Domain\Vehicle.class
+Domain\SanctionHolder.class
+Domain\Manager$1.class
+Domain\Owner.class
+Persistence\DriverDao.class
+Domain\Sanction.class
+Persistence\OwnerDao.class
+Persistence\HibernateFactory.class
+Domain\Inquiry.class
+Persistence\GeneralDao.class
+Persistence\VehicleDao.class
+Domain\Driver.class
+Domain\Manager.class
+Domain\Manager$ManagerHolder.class

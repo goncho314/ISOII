@@ -63,4 +63,7 @@
 	</dependency>
 </dependencies>
   <packaging>pom</packaging>
+  <modules>
+  	<module>SoftCorpESI-Multas</module>
+  </modules>
 </project>
