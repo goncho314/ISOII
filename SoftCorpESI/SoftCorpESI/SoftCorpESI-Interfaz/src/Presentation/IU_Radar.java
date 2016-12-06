@@ -10,6 +10,7 @@ import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import java.awt.Font;
 import java.awt.event.ActionListener;
+import java.util.Random;
 import java.awt.event.ActionEvent;
 
 public class IU_Radar {
@@ -83,22 +84,29 @@ public class IU_Radar {
 
 	private class BtnEncenderRadarActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			encenderRadar();
 			btnEncenderRadar.setEnabled(false);
 			btnApagarRadar.setEnabled(true);
+			try {
+				encenderRadar();
+			} catch (InterruptedException e1) {
+				e1.printStackTrace();
+			}
 		}
 	}
 	private class BtnApagarRadarActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			apagarRadar();
 			btnApagarRadar.setEnabled(false);
 			btnEncenderRadar.setEnabled(true);
+			apagarRadar();
 			
 		}
 	}
 	
-	public void encenderRadar(){
-		r = new Domain.Radar("CM-42_km25",120);
+	public void encenderRadar() throws InterruptedException{
+		Random rnd = new Random();
+		int n = (int)(rnd.nextDouble() * 10 + 0);
+		r = new Domain.Radar("Tramo"+n,(30+n*10));
+		r.start();
 	}
 	
 	public void apagarRadar(){
