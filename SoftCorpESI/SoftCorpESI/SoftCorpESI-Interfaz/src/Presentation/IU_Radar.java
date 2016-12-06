@@ -18,6 +18,7 @@ public class IU_Radar {
 	private JButton btnEncenderRadar;
 	
 	private static Domain.Radar r;
+	private JButton btnApagarRadar;
 
 	/**
 	 * Launch the application.
@@ -58,7 +59,7 @@ public class IU_Radar {
 		{
 			btnEncenderRadar = new JButton("Encender Radar");
 			btnEncenderRadar.addActionListener(new BtnEncenderRadarActionListener());
-			btnEncenderRadar.setFont(new Font("Tahoma", Font.PLAIN, 32));
+			btnEncenderRadar.setFont(new Font("Tahoma", Font.PLAIN, 40));
 			GridBagConstraints gbc_btnEncenderRadar = new GridBagConstraints();
 			gbc_btnEncenderRadar.fill = GridBagConstraints.BOTH;
 			gbc_btnEncenderRadar.insets = new Insets(0, 0, 5, 0);
@@ -66,16 +67,41 @@ public class IU_Radar {
 			gbc_btnEncenderRadar.gridy = 0;
 			frame.getContentPane().add(btnEncenderRadar, gbc_btnEncenderRadar);
 		}
+		{
+			btnApagarRadar = new JButton("Apagar Radar");
+			btnApagarRadar.addActionListener(new BtnApagarRadarActionListener());
+			btnApagarRadar.setEnabled(false);
+			btnApagarRadar.setFont(new Font("Tahoma", Font.PLAIN, 40));
+			GridBagConstraints gbc_btnApagarRadar = new GridBagConstraints();
+			gbc_btnApagarRadar.fill = GridBagConstraints.BOTH;
+			gbc_btnApagarRadar.insets = new Insets(0, 0, 5, 0);
+			gbc_btnApagarRadar.gridx = 0;
+			gbc_btnApagarRadar.gridy = 1;
+			frame.getContentPane().add(btnApagarRadar, gbc_btnApagarRadar);
+		}
 	}
 
 	private class BtnEncenderRadarActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			encenderRadar();
 			btnEncenderRadar.setEnabled(false);
+			btnApagarRadar.setEnabled(true);
+		}
+	}
+	private class BtnApagarRadarActionListener implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			apagarRadar();
+			btnApagarRadar.setEnabled(false);
+			btnEncenderRadar.setEnabled(true);
+			
 		}
 	}
 	
 	public void encenderRadar(){
 		r = new Domain.Radar("CM-42_km25",120);
+	}
+	
+	public void apagarRadar(){
+		r.setEstado(false);
 	}
 }
