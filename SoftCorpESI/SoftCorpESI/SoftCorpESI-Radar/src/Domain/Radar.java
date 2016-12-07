@@ -40,6 +40,10 @@ public class Radar extends Thread{
 				n = (int)(rnd.nextDouble() * (201-(int)(this.maxSpeed*1.25+1)) + (int)(this.maxSpeed*1.25+1));
 			else
 				n = (int)(rnd.nextDouble() * (int)(this.maxSpeed*1.25+1) + 1);
+			if(n>this.maxSpeed){
+				Manager.get().openInquiry(((Vehicle) l.get(0)).getLicense(), (double) n, this.location, this.maxSpeed);
+				System.out.println(((Vehicle) l.get(0)).getLicense());
+			}
 			Thread.sleep(3000);
 		}
 	}
