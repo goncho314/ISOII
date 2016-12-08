@@ -29,6 +29,7 @@ public class IU_Radar {
 	private JButton btnSancionar;
 	private JPanel panel;
 	private JLabel lblEstado;
+	private JButton btnPagarSancin;
 
 	/**
 	 * Launch the application.
@@ -101,6 +102,17 @@ public class IU_Radar {
 			frame.getContentPane().add(btnSancionar, gbc_btnSancionar);
 		}
 		{
+			btnPagarSancin = new JButton("Pagar Sanción");
+			btnPagarSancin.addActionListener(new BtnPagarSancinActionListener());
+			btnPagarSancin.setFont(new Font("Tahoma", Font.PLAIN, 40));
+			GridBagConstraints gbc_btnPagarSancin = new GridBagConstraints();
+			gbc_btnPagarSancin.fill = GridBagConstraints.BOTH;
+			gbc_btnPagarSancin.insets = new Insets(0, 0, 5, 0);
+			gbc_btnPagarSancin.gridx = 0;
+			gbc_btnPagarSancin.gridy = 3;
+			frame.getContentPane().add(btnPagarSancin, gbc_btnPagarSancin);
+		}
+		{
 			panel = new JPanel();
 			GridBagConstraints gbc_panel = new GridBagConstraints();
 			gbc_panel.anchor = GridBagConstraints.WEST;
@@ -141,6 +153,11 @@ public class IU_Radar {
 			sancionConductor();
 		}
 	}
+	private class BtnPagarSancinActionListener implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			pagarSancion();
+		}
+	}
 	
 	public void encenderRadar() throws InterruptedException{
 		Random rnd = new Random();
@@ -161,11 +178,26 @@ public class IU_Radar {
 			Manager.get().identifyDriver(idInquiry, dni);
 			lblEstado.setText("Conductor con dni: "+dni+" sancionado por el expediente "+idInquiry);
 		}
+		catch(NullPointerException e2){
+			lblEstado.setText("Estado: No se ha podido sancionar");
+		}
 		catch(NumberFormatException e1){
 			lblEstado.setText("Estado: Identificador no válido");
 		}
-		catch(javax.persistence.NoResultException e2){
-			lblEstado.setText("Estado: No se ha podido sancionar");
+	}
+	
+	public void pagarSancion(){
+		String sancion = JOptionPane.showInputDialog(frame, "Indica el número de la sanción");
+		try{
+			int idSancion = Integer.parseInt(sancion);
+			Manager.get().pay(idSancion);
+			lblEstado.setText("Sanción con número "+idSancion+" pagada");
+		}
+		catch(NumberFormatException e1){
+			lblEstado.setText("Estado: Número de sanción no válido");
+		}
+		catch(Exception e2){
+			lblEstado.setText("Estado: No se ha podido tramitar la sanción");
 		}
 	}
 }
