@@ -138,19 +138,7 @@ public class IU_Radar {
 	}
 	private class BtnSancionarActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			String idExp = JOptionPane.showInputDialog(frame, "Indica el número del expediente");
-			try{
-				int idInquiry = Integer.parseInt(idExp);
-				String dni = JOptionPane.showInputDialog(frame, "Indica el dni del conductor");
-				Manager.get().identifyDriver(idInquiry, dni);
-				lblEstado.setText("Conductor con dni: "+dni+" sancionado por el expediente "+idInquiry);
-			}
-			catch(NumberFormatException e1){
-				lblEstado.setText("Estado: Identificador no válido");
-			}
-			catch(javax.persistence.NoResultException e2){
-				lblEstado.setText("Estado: No se ha podido sancionar");
-			}
+			sancionConductor();
 		}
 	}
 	
@@ -164,5 +152,20 @@ public class IU_Radar {
 	
 	public void apagarRadar(){
 		r.setEstado(false);
+	}
+	public void sancionConductor(){
+		String idExp = JOptionPane.showInputDialog(frame, "Indica el número del expediente");
+		try{
+			int idInquiry = Integer.parseInt(idExp);
+			String dni = JOptionPane.showInputDialog(frame, "Indica el dni del conductor");
+			Manager.get().identifyDriver(idInquiry, dni);
+			lblEstado.setText("Conductor con dni: "+dni+" sancionado por el expediente "+idInquiry);
+		}
+		catch(NumberFormatException e1){
+			lblEstado.setText("Estado: Identificador no válido");
+		}
+		catch(javax.persistence.NoResultException e2){
+			lblEstado.setText("Estado: No se ha podido sancionar");
+		}
 	}
 }
