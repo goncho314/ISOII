@@ -18,6 +18,7 @@ import java.util.Random;
 import java.awt.event.ActionEvent;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+import java.awt.Rectangle;
 
 public class IU_Radar {
 
@@ -30,6 +31,7 @@ public class IU_Radar {
 	private JPanel panel;
 	private JLabel lblEstado;
 	private JButton btnPagarSancin;
+	private JButton btnCambiarPropietario;
 
 	/**
 	 * Launch the application.
@@ -113,6 +115,17 @@ public class IU_Radar {
 			frame.getContentPane().add(btnPagarSancin, gbc_btnPagarSancin);
 		}
 		{
+			btnCambiarPropietario = new JButton("Cambiar propietario");
+			btnCambiarPropietario.addActionListener(new BtnCambiarPropietarioActionListener());
+			btnCambiarPropietario.setFont(new Font("Tahoma", Font.PLAIN, 40));
+			GridBagConstraints gbc_btnCambiarPropietario = new GridBagConstraints();
+			gbc_btnCambiarPropietario.fill = GridBagConstraints.BOTH;
+			gbc_btnCambiarPropietario.insets = new Insets(0, 0, 5, 0);
+			gbc_btnCambiarPropietario.gridx = 0;
+			gbc_btnCambiarPropietario.gridy = 4;
+			frame.getContentPane().add(btnCambiarPropietario, gbc_btnCambiarPropietario);
+		}
+		{
 			panel = new JPanel();
 			GridBagConstraints gbc_panel = new GridBagConstraints();
 			gbc_panel.anchor = GridBagConstraints.WEST;
@@ -158,6 +171,11 @@ public class IU_Radar {
 			pagarSancion();
 		}
 	}
+	private class BtnCambiarPropietarioActionListener implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			cambiarPropietario();
+		}
+	}
 	
 	public void encenderRadar() throws InterruptedException{
 		Random rnd = new Random();
@@ -198,6 +216,18 @@ public class IU_Radar {
 		}
 		catch(Exception e2){
 			lblEstado.setText("Estado: No se ha podido tramitar la sanción");
+		}
+	}
+	
+	public void cambiarPropietario(){
+		try{
+			String license = JOptionPane.showInputDialog(frame, "Indica la matrícula del vehículo");
+			String dni = JOptionPane.showInputDialog(frame, "Indica el dni del nuevo propietario");
+			Manager.get().changeOwner(license, dni);
+			lblEstado.setText("Conductor con dni: "+dni+" es el nuevo propietario\ndel vehículo con matrícula "+license);
+		}
+		catch(javax.persistence.NoResultException e1){
+			lblEstado.setText("Estado: No se ha podido cambiar el propietario");
 		}
 	}
 }

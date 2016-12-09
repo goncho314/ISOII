@@ -1,12 +1,12 @@
-/Users/javi/Documents/workspace/SoftCorpESI/SoftCorpESI/SoftCorpESI/SoftCorpESI-Multas/src/Domain/Vehicle.java
-/Users/javi/Documents/workspace/SoftCorpESI/SoftCorpESI/SoftCorpESI/SoftCorpESI-Multas/src/Domain/Sanction.java
-/Users/javi/Documents/workspace/SoftCorpESI/SoftCorpESI/SoftCorpESI/SoftCorpESI-Multas/src/Persistence/GeneralDao.java
-/Users/javi/Documents/workspace/SoftCorpESI/SoftCorpESI/SoftCorpESI/SoftCorpESI-Multas/src/Persistence/HibernateFactory.java
-/Users/javi/Documents/workspace/SoftCorpESI/SoftCorpESI/SoftCorpESI/SoftCorpESI-Multas/src/Persistence/OwnerDao.java
-/Users/javi/Documents/workspace/SoftCorpESI/SoftCorpESI/SoftCorpESI/SoftCorpESI-Multas/src/Domain/Manager.java
-/Users/javi/Documents/workspace/SoftCorpESI/SoftCorpESI/SoftCorpESI/SoftCorpESI-Multas/src/Domain/Owner.java
-/Users/javi/Documents/workspace/SoftCorpESI/SoftCorpESI/SoftCorpESI/SoftCorpESI-Multas/src/Domain/Driver.java
-/Users/javi/Documents/workspace/SoftCorpESI/SoftCorpESI/SoftCorpESI/SoftCorpESI-Multas/src/Domain/Inquiry.java
-/Users/javi/Documents/workspace/SoftCorpESI/SoftCorpESI/SoftCorpESI/SoftCorpESI-Multas/src/Persistence/VehicleDao.java
-/Users/javi/Documents/workspace/SoftCorpESI/SoftCorpESI/SoftCorpESI/SoftCorpESI-Multas/src/Persistence/DriverDao.java
-/Users/javi/Documents/workspace/SoftCorpESI/SoftCorpESI/SoftCorpESI/SoftCorpESI-Multas/src/Domain/SanctionHolder.java
+C:\Users\Usuario\Dropbox\UCLM\3º\ISO II\Practicas\Git\SoftCorpESI\SoftCorpESI\SoftCorpESI\SoftCorpESI\SoftCorpESI\SoftCorpESI-Multas\src\Domain\Inquiry.java
+C:\Users\Usuario\Dropbox\UCLM\3º\ISO II\Practicas\Git\SoftCorpESI\SoftCorpESI\SoftCorpESI\SoftCorpESI\SoftCorpESI\SoftCorpESI-Multas\src\Persistence\DriverDao.java
+C:\Users\Usuario\Dropbox\UCLM\3º\ISO II\Practicas\Git\SoftCorpESI\SoftCorpESI\SoftCorpESI\SoftCorpESI\SoftCorpESI\SoftCorpESI-Multas\src\Domain\Owner.java
+C:\Users\Usuario\Dropbox\UCLM\3º\ISO II\Practicas\Git\SoftCorpESI\SoftCorpESI\SoftCorpESI\SoftCorpESI\SoftCorpESI\SoftCorpESI-Multas\src\Domain\Sanction.java
+C:\Users\Usuario\Dropbox\UCLM\3º\ISO II\Practicas\Git\SoftCorpESI\SoftCorpESI\SoftCorpESI\SoftCorpESI\SoftCorpESI\SoftCorpESI-Multas\src\Persistence\HibernateFactory.java
+C:\Users\Usuario\Dropbox\UCLM\3º\ISO II\Practicas\Git\SoftCorpESI\SoftCorpESI\SoftCorpESI\SoftCorpESI\SoftCorpESI\SoftCorpESI-Multas\src\Persistence\OwnerDao.java
+C:\Users\Usuario\Dropbox\UCLM\3º\ISO II\Practicas\Git\SoftCorpESI\SoftCorpESI\SoftCorpESI\SoftCorpESI\SoftCorpESI\SoftCorpESI-Multas\src\Persistence\GeneralDao.java
+C:\Users\Usuario\Dropbox\UCLM\3º\ISO II\Practicas\Git\SoftCorpESI\SoftCorpESI\SoftCorpESI\SoftCorpESI\SoftCorpESI\SoftCorpESI-Multas\src\Domain\Vehicle.java
+C:\Users\Usuario\Dropbox\UCLM\3º\ISO II\Practicas\Git\SoftCorpESI\SoftCorpESI\SoftCorpESI\SoftCorpESI\SoftCorpESI\SoftCorpESI-Multas\src\Domain\Manager.java
+C:\Users\Usuario\Dropbox\UCLM\3º\ISO II\Practicas\Git\SoftCorpESI\SoftCorpESI\SoftCorpESI\SoftCorpESI\SoftCorpESI\SoftCorpESI-Multas\src\Domain\Driver.java
+C:\Users\Usuario\Dropbox\UCLM\3º\ISO II\Practicas\Git\SoftCorpESI\SoftCorpESI\SoftCorpESI\SoftCorpESI\SoftCorpESI\SoftCorpESI-Multas\src\Domain\SanctionHolder.java
+C:\Users\Usuario\Dropbox\UCLM\3º\ISO II\Practicas\Git\SoftCorpESI\SoftCorpESI\SoftCorpESI\SoftCorpESI\SoftCorpESI\SoftCorpESI-Multas\src\Persistence\VehicleDao.java
